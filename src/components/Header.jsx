@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useTheme } from '../hooks/useTheme.js';
 
 const NAV_ITEMS = [
   { id: 'about', label: 'À Propos' },
@@ -11,6 +12,7 @@ const NAV_ITEMS = [
 
 export default function Header({ activeSection }) {
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [theme, toggleTheme] = useTheme();
 
   const handleNavClick = (e, id) => {
     e.preventDefault();
@@ -42,6 +44,14 @@ export default function Header({ activeSection }) {
           ))}
         </ul>
         <div className="nav-right">
+          <button
+            type="button"
+            className="theme-toggle"
+            aria-label="Changer de thème"
+            onClick={toggleTheme}
+          >
+            <i className={theme === 'dark' ? 'fa-solid fa-sun' : 'fa-solid fa-moon'}></i>
+          </button>
           <a href="#contact" className="btn-hire" onClick={(e) => handleNavClick(e, 'contact')}>
             Me recruter <i className="fa-solid fa-arrow-right"></i>
           </a>
