@@ -10,11 +10,13 @@
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js" defer></script>
 </head>
 <body>
 
     <!-- Particle canvas -->
     <canvas id="particles-canvas"></canvas>
+    <div class="noise-overlay"></div>
 
     <!-- Custom cursor -->
     <div class="cursor-dot" id="cursorDot"></div>
@@ -92,6 +94,10 @@
                             <i class="fa-regular fa-envelope"></i>
                             <span>Contact</span>
                         </a>
+                        <button type="button" class="btn-ghost" id="downloadCvBtn">
+                            <i class="fa-solid fa-file-arrow-down"></i>
+                            <span>Télécharger CV</span>
+                        </button>
                     </div>
 
                     <div class="hero-contacts">
